@@ -22,7 +22,6 @@
 
     <script>
       var count = 0;
-      console.log(count);
 
       function countDown() {
         var element = document.getElementById("zahl");
@@ -31,9 +30,10 @@
       }
 
       function countUp() {
-        var element = document.getElementById("zahl");
-        console.log(element);
-        element.innerHTML = count++;
+        // Aus Lösung: Weil "element" im Code mehrfach als Var angesprochen wird, hier der Klarheit halber eher element2 nennen
+        var element2 = document.getElementById("zahl");
+        console.log(element2);
+        element2.innerHTML = count++;
       }
     </script>
   </head>
@@ -41,5 +41,9 @@
     <button onclick="countDown()">-</button>
     <span id="zahl">0</span>
     <button onclick="countUp()">+</button>
+    <p>
+      Hier geht es zur Musterlösung:
+      <a href="/Kapitel 2/Musterlösung.html">Klicken</a>
+    </p>
   </body>
 </html>
