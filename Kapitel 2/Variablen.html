@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aufgabe 2</title>
+    <script>
+      // Varaible deklarieren
+      var count = 0;
+      // Variable auslesen
+      console.log(count);
+      count = 1;
+      console.log(count);
+      // Addition und Subtraktion
+      count = count + 1; // 2
+      console.log(count);
+      // += Erhöht den vorherigen Wert um den angegeben Wert - muss nicht 1 sein
+      count += 1; // 3
+      console.log(count);
+      // Addierung von 1
+      count++; // 4
+      console.log(count);
+      count = count - 1; // 3
+      console.log(count);
+      count -= 1; // 2
+      console.log(count);
+      count--; // 1
+      console.log(count);
+      // Multiplizieren und Dividieren
+      count = count * 2; // 2
+      console.log(count);
+      count = count / 2; // 1
+      console.log(count);
+      count *= 2; // 2
+      console.log(count);
+      count /= 2; // 1
+      console.log(count);
+      // Variablen brauchen einen eindeutigen Namen. Hierfür gibt es den Common sence "camelCase":
+      // 1. teil einer Variable soll immer klein sein, Rest groß zb. "minValue" "findById"
+      function countAnzeigen() {
+        // Element "document" repräsentiert alles, was innerhalb des HTML-Tag steht.
+        // Variable deklarieren
+        var element = document.getElementById("text");
+        // Variable auslesen
+        console.log(element);
+        // Variable überschreiben
+        // innerHTLM= bezieht sich auf den HTML-Code, der innerhalb des Element stehen würde.
+        // Hiermit wird der innerHTML-Wert mit count überschrieben
+        element.innerHTML = count;
+      }
+    </script>
+  </head>
+  <body>
+    <span id="text">
+      <p>Hallo!</p>
+    </span>
+    <button onclick="countAnzeigen()">Anzeigen</button>
+  </body>
+</html>
