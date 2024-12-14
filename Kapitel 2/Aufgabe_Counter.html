@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aufgabe von Kapitel 2: Counter</title>
+
+    <!-- Mit dieser Aufgabe sollst du die Verwendung von Variablen verstehen und lernen, wie du Elemente einer Webseite durch JavaScript Code verändern kannst. 
+     Ziel ist es, dass du einen Counter (Zähler) bauen sollst, der hoch- und runterzählen kann. Der Wert soll immer um eins erhöht, bzw. verringert werden. 
+     Dazu sollst du folgendes erstellen: 
+     *Erstelle eine Webseite mit zwei Buttons mit dem Text "+" und "-" 
+     *Erstelle ein Textelement (z.B. <span>)mit dem Text "0" 
+     Definiere eine Variable
+     Beim Klicken auf den Button mit dem Text "+" soll folgendes passieren: 
+        Erhöhe den Wert des Counters um 1 
+        Zeige den neuen Wert dem Nutzer 
+    Beim Klicken auf den Button mit dem Text "-" soll folgendes passieren: 
+        Erhöhe den Wert des Counters um 1 
+        Zeige den neuen Wert dem Nutzer 
+    Nutze das Video, um dir genau anzuschauen, wie es am Ende aussehen soll. 
+    Beachte: Fange mit der Ausgabe auf der Konsole an. Dadurch stellst du sicher, dass der Code zum Ändern der Variable funktioniert. -->
+
+    <script>
+      var count = 0;
+      console.log(count);
+
+      function countDown() {
+        var element = document.getElementById("zahl");
+        console.log(element);
+        element.innerHTML = count--;
+      }
+
+      function countUp() {
+        var element = document.getElementById("zahl");
+        console.log(element);
+        element.innerHTML = count++;
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="countDown()">-</button>
+    <span id="zahl">0</span>
+    <button onclick="countUp()">+</button>
+  </body>
+</html>
