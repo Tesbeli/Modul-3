@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M3-C3-Konstante Variablen</title>
+    <script>
+      // Aus bisheriger Aufgabe kopiert
+      var count = 0;
+      // Mit const fügt man für -1 und 3 konstante Variablen ein. Mann kann sie lesen, aber nicht überschreiben
+      const minCount = -1;
+      const maxCount = 2;
+
+      function increaseCount() {
+        count++;
+        countAnzeigen();
+      }
+
+      function decreaseCount() {
+        count--;
+        countAnzeigen();
+      }
+
+      function countAnzeigen() {
+        console.log(count);
+        var element = document.getElementById("anzeigen");
+        element.innerHTML = count;
+
+        if (count < minCount) {
+          // Mit + kann man konstante Variable und Strings in der Ausgabe miteinander verbinden
+          alert("Der Wert ist kleiner als " + minCount);
+        } else if (count === minCount) {
+          alert("Der Wert ist gleich " + minCount);
+        } else if (count > minCount && count < maxCount) {
+          // Leerzeichen im String angeben!
+          alert("Der Wert ist zwischen " + minCount + " und " + maxCount);
+        } else if (count === maxCount) {
+          alert("Der Wert ist gleich " + maxCount);
+        } else if (count > maxCount) {
+          alert("Der Wert ist größer als " + maxCount);
+        }
+        console.log("Wert ist größer " + minCount, count > minCount);
+        console.log("Wert ist kleiner " + maxCount, count < maxCount);
+        console.log(
+          "Der Wert ist zwischen " + minCount + " und " + maxCount,
+          count > minCount && count < maxCount
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="decreaseCount()">-</button>
+    <span id="anzeigen">0</span>
+    <button onclick="increaseCount()">+</button>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M3-C3-Erweiterung: If-Abfragen</title>
+    <script>
+      // Wahr und Falsch und das Gegenteil einer Variable
+      console.log("Wahr und Falsch:");
+      var wahr = true;
+      var falsch = false;
+
+      if (wahr) {
+        console.log("Wahr");
+      }
+      // console.log immer zur Überprüfung der Werte von Var nutzen! -> DEBUGGING
+      console.log(wahr);
+
+      // ! für die Umkehrung einer Variable (true -> false und umgekehrt)
+      if (!wahr) {
+        // Das console.log "nicht wahr" wird nicht ausgeführt, weil die if-Abfrage ein false ausgibt
+        console.log("Nicht wahr");
+      }
+      console.log(!wahr);
+
+      if (falsch) {
+        console.log("Falsch");
+      }
+      console.log(falsch);
+
+      if (!falsch) {
+        console.log("Nicht falsch");
+      }
+      console.log(!falsch);
+      console.log("Vergleichen von Werten:");
+
+      // Vergleichen von Werten
+
+      var zahl = 12;
+      var zeichenkette = "12";
+
+      console.log(zahl);
+      console.log(zeichenkette);
+      if (zahl == zeichenkette) {
+        console.log("Gleich");
+      }
+      // Das doppelte = ignoriert die " eines Strings und überprüft nur den Inhalt,  das === überprüft hingegen auch den Datentyp
+      console.log(zahl == zeichenkette);
+      console.log(zahl === zeichenkette);
+      // Auf Ungleichheit testen (genauer Wert)
+      if (zahl !== zeichenkette) {
+        console.log("Ungleich Gleich");
+      }
+      console.log(zahl !== zeichenkette);
+
+      // Vergleich von Zahlen miteinder
+      console.log("Vergleich von Zahlen:");
+
+      var kleineZahl = 5;
+      var mittlereZahl = 6;
+      var großeZahl = 7;
+
+      // < prüft ob der Wert kleiner als der dahinter ist
+      if (kleineZahl < mittlereZahl) {
+        console.log("Kleiner");
+      }
+      // <= prüft ob Wert kleiner gleich als der dahinter ist
+      if (kleineZahl <= mittlereZahl) {
+        console.log("Kleiner Gleich");
+      }
+      console.log(kleineZahl < mittlereZahl);
+      console.log(kleineZahl <= mittlereZahl);
+
+      // > prüft ob der Wert größer als der dahinter ist
+      if (großeZahl > mittlereZahl) {
+        console.log("Größer");
+      }
+      // >= prüft ob Wert größer gleich als der dahinter ist
+      if (großeZahl >= mittlereZahl) {
+        console.log("Größer Gleich");
+      }
+      console.log(großeZahl > mittlereZahl);
+      console.log(großeZahl >= mittlereZahl);
+
+      // Verkettete Bedingungen
+      console.log("Verkettete Bedingungen:");
+      // && um zwei Bedingungen kombiniert zu überprüfen
+      if (kleineZahl < mittlereZahl && mittlereZahl < großeZahl) {
+        console.log("Klein Mittel Groß");
+      }
+      // Zur Veranschaulichung der Auswirkung von  && und !
+
+      /** &&    true  false
+       * true   true  false
+       * false  false false
+       */
+      // console.log(wahr && falsch);
+      // console.log(wahr && !falsch);
+      // console.log(!wahr && !falsch);
+
+      console.log(kleineZahl < mittlereZahl, mittlereZahl < großeZahl);
+      console.log(kleineZahl < mittlereZahl && mittlereZahl < großeZahl);
+
+      console.log(kleineZahl < mittlereZahl, !(mittlereZahl < großeZahl));
+      console.log(kleineZahl < mittlereZahl && !(mittlereZahl < großeZahl));
+      // Neben der && Abfrage gibt es auch die || (oder)-Abfrage
+      console.log("Oder-Abfrage:");
+      /* ||    true  false
+       * true  true  true
+       * false true  false
+       */
+      console.log(wahr || wahr);
+      console.log(wahr || falsch);
+      console.log(falsch || falsch);
+      console.log(wahr || !falsch);
+      console.log(!wahr || !falsch);
+    </script>
+  </head>
+  <body></body>
+</html>

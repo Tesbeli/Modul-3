@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veränderung von Klassen</title>
+    <style>
+      .red {
+        background-color: red;
+      }
+    </style>
+    <script>
+      // 1. Möglichkeit den roten Button wieder weiß zu bekommen
+      var red = false; // boolean-Wert (wahr/falsch)
+
+      function toggleRed() {
+        var element = document.getElementById("red");
+        if (red) {
+          // Klasse weg
+          element.classList.remove("red");
+        } else {
+          // Klasse hinzufügen
+          element.classList.add("red");
+        }
+        red = !red; // false --> !false=true, !true = false
+      }
+      // 2. Möglichkeit den roten Button wieder weiß zu bekommen
+      function toggleRedTwo() {
+        var element = document.getElementById("red");
+        element.classList.toggle("red");
+      }
+    </script>
+  </head>
+  <body>
+    <button id="red" onclick="toggleRed()">rot</button>
+  </body>
+</html>

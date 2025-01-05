@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aufgabe: Bankautomat</title>
+    <!-- Mit dieser Aufgabe sollst du sowohl If-Abfragen als auch die Veränderung von Klassen durch JavaScript lernen. 
+     Dafür sollst du einen Bankautomaten entwickeln, von dem man Geld abheben und einzahlen kann. Jedoch darf der Kontostand 
+     ein bestimmtes Limit nicht über- bzw. unterschreiten. Folgendes soll umgesetzt werden:
+     - Erstelle eine Webseite mit zwei Buttons zum Ein- bzw. Auszahlen.
+     - Gebe den Kontostand an.
+     - Definieren mit jeweils einer Variable den Kontostand und das obere (1000€) und das untere Limit (-100€)
+     - Alarmiere den Nutzer, falls er bereits 1000€ auf dem Konto hat und noch mehr einzahlen möchte. Dies soll verhindert werden.
+     - Alarmiere den Nutzer, falls er -100€ auf dem Konto hat (bzw. Schulden hat) und noch mehr Geld abheben möchte. Das soll verhindert werden.
+     - Wenn der Kontostand niedriger als 0€ ist, soll er rot dargestellt werden
+    Beachte:
+    - Achte auf die Reihenfolge, wann Geld auf das Konto gebucht wird und wann die Abfrage zum aktuellen Kontostand geschieht
+    - Verwende den passenden Typ bei der Deklarierung der Variable -->
+    <style>
+      .red {
+        color: red;
+      }
+    </style>
+    <script>
+      var count = 0;
+      const oberesLimit = 1000;
+      const unteresLimit = -100;
+      const zahlung = 100;
+
+      function increaseCount() {
+        // prüft, ob das obere Limit erreicht wurde
+        if (count < oberesLimit) {
+          count = count + zahlung;
+        } else if (count >= oberesLimit) {
+          alert(
+            "Achtung! Sie haben das Limit erreicht und können kein weiteres Geld einzahlen"
+          );
+          return oberesLimit;
+        }
+        countAnzeigen();
+      }
+
+      function decreaseCount() {
+        // Prüft ob das untere Limit erreicht wurde
+        if (count > unteresLimit) {
+          count = count - zahlung;
+        } else if (count <= unteresLimit) {
+          alert(
+            "Achtung! Sie sind mit 100 € im Minus und können kein weiteres Geld abheben"
+          );
+          return unteresLimit;
+        }
+        countAnzeigen();
+      }
+
+      function countAnzeigen() {
+        var element = document.getElementById("anzeigen");
+        element.innerHTML = count;
+        console.log(count);
+        // Verändert die Farbe des Kontostandes
+        if (count < 0) {
+          // Obige Def gilt auch für die if-Abfrage.. element = document.getElementById("anzeigen");
+          element.classList.add("red");
+        } else if (count >= 0) {
+          // element = document.getElementById("anzeigen");
+          element.classList.remove("red");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="decreaseCount()">100 € abheben</button>
+    <p>Kontostand: <span id="anzeigen">0</span> €</p>
+    <button onclick="increaseCount()">100 € einzahlen</button>
+    <p>
+      Hier geht es zur Musterlösung:
+      <a href="/Kapitel 3/Musterlösung_Bankautomat.html">Hier klicken</a>
+    </p>
+  </body>
+</html>
