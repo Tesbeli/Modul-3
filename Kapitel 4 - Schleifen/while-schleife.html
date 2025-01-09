@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modul 3 - C4 Schleifen 2</title>
+    <script>
+      function countNumbers() {
+        const start = document.getElementById("start").value;
+        const end = document.getElementById("end").value;
+        console.log(start, end);
+        // For-Schleife
+        for (let i = start; i <= end; i++) {
+          showLog(i);
+        }
+        // While-Schleife: Wird ausgeführt wenn das innerhalb der () true ist
+        let x = start;
+        while (x <= end) {
+          const rest = x % 2;
+          showLog(x);
+          x++;
+        }
+        // Do-While-Schleife: Do wird solange ausgeführt, wie while true ist.
+        // Achtung: Do wird mindestens einmal ausführt, auch wenn while nicht true ist.
+        let z = start;
+        do {
+          console.log("Do While");
+          showLog(z);
+          z++;
+        } while (z <= end);
+        // Um die gleichen Teile in den oberen Funkt. abzukürzen, nutzen wir die untere mit Hilfe von Parametern
+        function showLog(z) {
+          const rest = z % 2;
+          if (rest === 0) {
+            console.log("Die Zahl " + z + " ist gerade");
+          } else {
+            console.log("Die Zahl " + z + " ist ungerade");
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    Startzahl: <input type="number" id="start" /> Endzahl:
+    <input type="number" id="end" />
+    <button onclick="countNumbers()">Start</button>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modul 3 - C4 Schleifen 1</title>
+    <script> function countNumbers(){
+        // Man kann hier auf das Attriut "value" zugreifen, weil es ein input-Feld ist
+        const start = document.getElementById("start").value; 
+        const end = document.getElementById("end").value;
+        console.log(start, end);
+        // Mit 1. Pos in den Klammern def. wir die Zählerzahl, mit 2. Bedingung und mit 3. die zu erledigende Schleife
+       // Mit "let" statt "var" stellt man sicher, dass das i nur im Rahmen der Schleife aufrufbar ist.  
+       //  "let" ist nur durch () benutzbar (kann innerhalb oder außerhalb definiert werden)
+        for (let i = start; i <= end; i++) {
+        // Modulo-Operation - Modulo % - Gibt den Rest zurück, wenn durch 2 geteilt wird 
+        const rest = i % 2; 
+        if (rest === 0) {
+            // Zahl ist gerade
+            console.log("Die Zahl " + i + " ist gerade");
+        } else {
+            // Zahl ist ungerade 
+            console.log("Die Zahl " + i + " ist ungerade")
+         }
+        }
+        // Wenn man in der for Schleife den definierten Wert als Variable deklariert, 
+        // wird der Var-Wert der Schleife gespeichert
+        console.log(i);
+    }
+    </script>
+  </head>
+  <br>
+    Startzahl: <input type="number" id="start"/>
+    Endzahl: <input type="number" id="end"/>
+    <button onclick="countNumbers()">Start</button>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aufgabe M3-C4</title>
+    <!-- Ziel dieser Aufgabe ist es, einen Zähler zu entwickeln, der von einer Zahl X bis zu einer Zahl Y zählen kann. 
+    Dabei soll er für jede Zahl dazwischen angeben, ob sie gerade oder ungerade ist. Außerdem soll am Endedie gesamte Anzahl 
+    an gerade und ungeraden Zahlen ausgegeben werden und eine Fehlermeldung angezeigt werden, wenn die Startzahl größer als die Endzahl ist. 
+    Dafür musst du folgendes erstellen: 
+    - Zwei Eingabefelder für eine Start- und eine Endzahl 
+    - Einen Startknopf Eine Ausgabe auf der Konsole zum angeben, ob einer Zahl gerade oder ungerade ist. 
+    - Eine Ausgabe, wie viele Zahlen gerade oder ungerade sind
+    -Eine Fehlermeldung, falls die Startzahl > Endzahl ist 
+    Beachte: 
+    - Überlege, welche Schleife sich in diesem Fall am besten eignet.
+    - Stelle sicher, dass deine Bedingung für die Schleife alles abdeckt. -->
+    <script>
+      function countAnzeige() {
+        const start = document.getElementById("start").value;
+        const end = document.getElementById("end").value;
+        console.log(start, end);
+      }
+    </script>
+  </head>
+  <body>
+    <p>Startzahl: <input type="number" id="start" /></p>
+    <p>Endzahl: <input type="number" id="end" /></p>
+    <p><button onclick="countAnzeige()">Start</button></p>
+  </body>
+</html>
