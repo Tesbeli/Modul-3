@@ -19,9 +19,13 @@
     <script>
       function countNumbers() {
         const start = document.getElementById("start").value;
-        const end = document.getElementById("end").value;
+        // Besser: Man sollte parseInt nutzen, um sicherzustellen, dass Eingaben aus Formularen oder Strings korrekt als Ganzzahlen verarbeitet werden,
+        // da value standardmäßig als String zurückgegeben wird und ohne Konvertierung unerwartete Ergebnisse entstehen können.
+        // radix steht für das zu verwendende Zahlensystem
+        const end = parseInt(document.getElementById("end").value, 10);
         var gerade = 0;
-        var ungerade = 0;
+        // Besser: let ist moderner und hat eine blockscope, während var global oder funktional ist. Daher sollte var durch let ersetzt werden.
+        let ungerade = 0;
         console.log("Startzahl: " + start + " Endzahl: " + end);
         if (start > end) {
           console.log(
