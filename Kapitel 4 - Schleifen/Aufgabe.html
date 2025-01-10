@@ -5,27 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aufgabe M3-C4</title>
     <!-- Ziel dieser Aufgabe ist es, einen Zähler zu entwickeln, der von einer Zahl X bis zu einer Zahl Y zählen kann. 
-    Dabei soll er für jede Zahl dazwischen angeben, ob sie gerade oder ungerade ist. Außerdem soll am Endedie gesamte Anzahl 
+    Dabei soll er für jede Zahl dazwischen angeben, ob sie gerade oder ungerade ist. Außerdem soll am Ende die gesamte Anzahl 
     an gerade und ungeraden Zahlen ausgegeben werden und eine Fehlermeldung angezeigt werden, wenn die Startzahl größer als die Endzahl ist. 
     Dafür musst du folgendes erstellen: 
-    - Zwei Eingabefelder für eine Start- und eine Endzahl 
-    - Einen Startknopf Eine Ausgabe auf der Konsole zum angeben, ob einer Zahl gerade oder ungerade ist. 
-    - Eine Ausgabe, wie viele Zahlen gerade oder ungerade sind
-    -Eine Fehlermeldung, falls die Startzahl > Endzahl ist 
+    -- Zwei Eingabefelder für eine Start- und eine Endzahl 
+    -- Einen Startknopf 
+    -- Eine Ausgabe auf der Konsole zum angeben, ob einer Zahl gerade oder ungerade ist. 
+    -- Eine Ausgabe, wie viele Zahlen gerade oder ungerade sind
+    -- Eine Fehlermeldung, falls die Startzahl > Endzahl ist 
     Beachte: 
     - Überlege, welche Schleife sich in diesem Fall am besten eignet.
     - Stelle sicher, dass deine Bedingung für die Schleife alles abdeckt. -->
     <script>
-      function countAnzeige() {
+      function countNumbers() {
         const start = document.getElementById("start").value;
         const end = document.getElementById("end").value;
-        console.log(start, end);
+        var gerade = 0;
+        var ungerade = 0;
+        console.log("Startzahl: " + start + " Endzahl: " + end);
+        if (start > end) {
+          console.log(
+            "Fehler: Die eingegebene Startzahl ist größer als die Endzahl."
+          );
+        } else {
+          for (let x = start; x <= end; x++) {
+            const rest = x % 2;
+            if (rest === 0) {
+              console.log("Die Zahl " + x + " ist gerade");
+              gerade++;
+            } else {
+              console.log("Die Zahl " + x + " ist ungerade");
+              ungerade++;
+            }
+          }
+          console.log("Es gibt " + gerade + " gerade Zahlen.");
+          console.log("Es gibt " + ungerade + " ungerade Zahlen.");
+        }
       }
     </script>
   </head>
   <body>
     <p>Startzahl: <input type="number" id="start" /></p>
     <p>Endzahl: <input type="number" id="end" /></p>
-    <p><button onclick="countAnzeige()">Start</button></p>
+    <p><button onclick="countNumbers()">Start</button></p>
   </body>
 </html>
